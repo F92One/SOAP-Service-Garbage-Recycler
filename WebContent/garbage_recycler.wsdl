@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.example.org/garbage_recycler/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="garbage_recycler" targetNamespace="http://www.example.org/garbage_recycler/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.example.org/garbage_recycler/">
+      <xsd:element name="registerUser">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="user" type="tns:User"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="registerUserResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="tns:User"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="addRecyclingToUser">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="username" type="xsd:string"></xsd:element>
+      			<xsd:element name="userRecycling" type="tns:UserRecycling"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="addRecyclingToUserResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="out" type="tns:UserRecycling"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getAllRecyclingFromUser">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="username" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getAllRecyclingFromUserResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="out" type="tns:UserRecycling" maxOccurs="unbounded" minOccurs="1"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getTotalRecycling">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="in" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getTotalRecyclingResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="out" type="tns:Recycling"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+    
+      <xsd:complexType name="User">
+      	<xsd:sequence>
+      		<xsd:element name="id" type="xsd:long"></xsd:element>
+      		<xsd:element name="firstname" type="xsd:string"></xsd:element>
+      		<xsd:element name="lastname" type="xsd:string"></xsd:element>
+      		<xsd:element name="username" type="xsd:string"></xsd:element>
+      		<xsd:element name="address" type="xsd:string"></xsd:element>
+      		<xsd:element name="mail" type="xsd:string"></xsd:element>
+      	</xsd:sequence>
+      </xsd:complexType>
+    
+      <xsd:complexType name="UserRecycling">
+      	<xsd:sequence>
+      		<xsd:element name="id" type="xsd:long"></xsd:element>
+      		<xsd:element name="user" type="tns:User"></xsd:element>
+      		<xsd:element name="bottles" type="xsd:int"></xsd:element>
+      		<xsd:element name="tetrabricks" type="xsd:int"></xsd:element>
+      		<xsd:element name="glass" type="xsd:int"></xsd:element>
+      		<xsd:element name="paperboards" type="xsd:int"></xsd:element>
+      		<xsd:element name="cans" type="xsd:int"></xsd:element>
+      	</xsd:sequence>
+      </xsd:complexType>
+    
+      <xsd:complexType name="Recycling">
+      	<xsd:sequence>
+      		<xsd:element name="bottles" type="xsd:int"></xsd:element>
+      		<xsd:element name="tetrabricks" type="xsd:int"></xsd:element>
+      		<xsd:element name="glass" type="xsd:int"></xsd:element>
+      		<xsd:element name="paperboard" type="xsd:int"></xsd:element>
+      		<xsd:element name="cans" type="xsd:int"></xsd:element>
+      		<xsd:element name="tons" type="xsd:float"></xsd:element>
+      	</xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="registerUserRequest">
+    <wsdl:part element="tns:registerUser" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="registerUserResponse">
+    <wsdl:part element="tns:registerUserResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="addRecyclingToUserRequest">
+  	<wsdl:part name="parameters" element="tns:addRecyclingToUser"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addRecyclingToUserResponse">
+  	<wsdl:part name="parameters" element="tns:addRecyclingToUserResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllRecyclingFromUserRequest">
+  	<wsdl:part name="parameters" element="tns:getAllRecyclingFromUser"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllRecyclingFromUserResponse">
+  	<wsdl:part name="parameters" element="tns:getAllRecyclingFromUserResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTotalRecyclingRequest">
+  	<wsdl:part name="parameters" element="tns:getTotalRecycling"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTotalRecyclingResponse">
+  	<wsdl:part name="parameters" element="tns:getTotalRecyclingResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="garbage_recycler">
+    <wsdl:operation name="registerUser">
+      <wsdl:input message="tns:registerUserRequest"/>
+      <wsdl:output message="tns:registerUserResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="addRecyclingToUser">
+    	<wsdl:input message="tns:addRecyclingToUserRequest"></wsdl:input>
+    	<wsdl:output message="tns:addRecyclingToUserResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllRecyclingFromUser">
+    	<wsdl:input message="tns:getAllRecyclingFromUserRequest"></wsdl:input>
+    	<wsdl:output message="tns:getAllRecyclingFromUserResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTotalRecycling">
+    	<wsdl:input message="tns:getTotalRecyclingRequest"></wsdl:input>
+    	<wsdl:output message="tns:getTotalRecyclingResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="garbage_recyclerSOAP"
+  	type="tns:garbage_recycler">
+
+  	<soap:binding style="document"
+  		transport="http://schemas.xmlsoap.org/soap/http" />
+  	<wsdl:operation name="registerUser">
+
+  		<soap:operation
+  			soapAction="http://www.example.org/garbage_recycler/registerUser" />
+  		<wsdl:input>
+
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="addRecyclingToUser">
+
+  		<soap:operation
+  			soapAction="http://www.example.org/garbage_recycler/addRecyclingToUser" />
+  		<wsdl:input>
+
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="getAllRecyclingFromUser">
+
+  		<soap:operation
+  			soapAction="http://www.example.org/garbage_recycler/getAllRecyclingFromUser" />
+  		<wsdl:input>
+
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="getTotalRecycling">
+
+  		<soap:operation
+  			soapAction="http://www.example.org/garbage_recycler/getTotalRecycling" />
+  		<wsdl:input>
+
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="garbage_recycler">
+    <wsdl:port binding="tns:garbage_recyclerSOAP" name="garbage_recyclerSOAP">
+      <soap:address location="http://localhost:8080/Garbage_Recycler/services/garbage_recycler/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

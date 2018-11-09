@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- This file was auto-generated from WSDL --><!-- by the Apache Axis2 version: 1.6.2  Built on : Apr 17, 2012 (05:33:49 IST) --><serviceGroup>
+    <service name="garbage_recycler">
+        <messageReceivers>
+            <messageReceiver mep="http://www.w3.org/ns/wsdl/in-out" class="org.example.www.garbage_recycler.Garbage_recyclerMessageReceiverInOut"/>
+        </messageReceivers>
+        <parameter name="ServiceClass">org.example.www.garbage_recycler.Garbage_recyclerSkeleton</parameter>
+        <parameter name="useOriginalwsdl">true</parameter>
+        <parameter name="modifyUserWSDLPortAddress">true</parameter>
+        <operation name="registerUser" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://www.example.org/garbage_recycler/">
+            <actionMapping>http://www.example.org/garbage_recycler/registerUser</actionMapping>
+            <outputActionMapping>http://www.example.org/garbage_recycler/garbage_recycler/registerUserResponse</outputActionMapping>
+        </operation>
+        <operation name="addRecyclingToUser" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://www.example.org/garbage_recycler/">
+            <actionMapping>http://www.example.org/garbage_recycler/addRecyclingToUser</actionMapping>
+            <outputActionMapping>http://www.example.org/garbage_recycler/garbage_recycler/addRecyclingToUserResponse</outputActionMapping>
+        </operation>
+        <operation name="getAllRecyclingFromUser" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://www.example.org/garbage_recycler/">
+            <actionMapping>http://www.example.org/garbage_recycler/getAllRecyclingFromUser</actionMapping>
+            <outputActionMapping>http://www.example.org/garbage_recycler/garbage_recycler/getAllRecyclingFromUserResponse</outputActionMapping>
+        </operation>
+        <operation name="getTotalRecycling" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://www.example.org/garbage_recycler/">
+            <actionMapping>http://www.example.org/garbage_recycler/getTotalRecycling</actionMapping>
+            <outputActionMapping>http://www.example.org/garbage_recycler/garbage_recycler/getTotalRecyclingResponse</outputActionMapping>
+        </operation>
+    </service>
+</serviceGroup>

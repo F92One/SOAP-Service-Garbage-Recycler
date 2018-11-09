@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="ae3d36d0-f62c-48a0-a23b-4f60900c4fe9" activeEnvironment="Default" name="garbage_recycler" resourceRoot="" soapui-version="5.4.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="fdab7bdf-6faa-480a-996e-5e52f1d962f4" wsaVersion="NONE" name="garbage_recyclerSOAP" type="wsdl" bindingName="{http://www.example.org/garbage_recycler/}garbage_recyclerSOAP" soapVersion="1_1" anonymous="optional" definition="file:/C:/Users/Fernando/eclipse-workspace/Garbage_Recycler/WebContent/garbage_recycler.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\C:\Users\Fernando\eclipse-workspace\Garbage_Recycler\WebContent\garbage_recycler.wsdl"><con:part><con:url>file:\C:\Users\Fernando\eclipse-workspace\Garbage_Recycler\WebContent\garbage_recycler.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="garbage_recycler" targetNamespace="http://www.example.org/garbage_recycler/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.example.org/garbage_recycler/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.example.org/garbage_recycler/">
+      <xsd:element name="registerUser">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="user" type="tns:User"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="registerUserResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="tns:User"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="addRecyclingToUser">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="username" type="xsd:string"/>
+            <xsd:element name="userRecycling" type="tns:UserRecycling"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="addRecyclingToUserResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="tns:UserRecycling"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getAllRecyclingFromUser">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="username" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getAllRecyclingFromUserResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="tns:UserRecycling" maxOccurs="unbounded" minOccurs="1"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getTotalRecycling">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="in" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getTotalRecyclingResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="tns:Recycling"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="User">
+        <xsd:sequence>
+          <xsd:element name="id" type="xsd:long"/>
+          <xsd:element name="firstname" type="xsd:string"/>
+          <xsd:element name="lastname" type="xsd:string"/>
+          <xsd:element name="username" type="xsd:string"/>
+          <xsd:element name="address" type="xsd:string"/>
+          <xsd:element name="mail" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="UserRecycling">
+        <xsd:sequence>
+          <xsd:element name="id" type="xsd:long"/>
+          <xsd:element name="user" type="tns:User"/>
+          <xsd:element name="bottles" type="xsd:int"/>
+          <xsd:element name="tetrabricks" type="xsd:int"/>
+          <xsd:element name="glass" type="xsd:int"/>
+          <xsd:element name="paperboards" type="xsd:int"/>
+          <xsd:element name="cans" type="xsd:int"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Recycling">
+        <xsd:sequence>
+          <xsd:element name="bottles" type="xsd:int"/>
+          <xsd:element name="tetrabricks" type="xsd:int"/>
+          <xsd:element name="glass" type="xsd:int"/>
+          <xsd:element name="paperboard" type="xsd:int"/>
+          <xsd:element name="cans" type="xsd:int"/>
+          <xsd:element name="tons" type="xsd:float"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="registerUserRequest">
+    <wsdl:part element="tns:registerUser" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="registerUserResponse">
+    <wsdl:part element="tns:registerUserResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="addRecyclingToUserRequest">
+    <wsdl:part name="parameters" element="tns:addRecyclingToUser"/>
+  </wsdl:message>
+  <wsdl:message name="addRecyclingToUserResponse">
+    <wsdl:part name="parameters" element="tns:addRecyclingToUserResponse"/>
+  </wsdl:message>
+  <wsdl:message name="getAllRecyclingFromUserRequest">
+    <wsdl:part name="parameters" element="tns:getAllRecyclingFromUser"/>
+  </wsdl:message>
+  <wsdl:message name="getAllRecyclingFromUserResponse">
+    <wsdl:part name="parameters" element="tns:getAllRecyclingFromUserResponse"/>
+  </wsdl:message>
+  <wsdl:message name="getTotalRecyclingRequest">
+    <wsdl:part name="parameters" element="tns:getTotalRecycling"/>
+  </wsdl:message>
+  <wsdl:message name="getTotalRecyclingResponse">
+    <wsdl:part name="parameters" element="tns:getTotalRecyclingResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="garbage_recycler">
+    <wsdl:operation name="registerUser">
+      <wsdl:input message="tns:registerUserRequest"/>
+      <wsdl:output message="tns:registerUserResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="addRecyclingToUser">
+      <wsdl:input message="tns:addRecyclingToUserRequest"/>
+      <wsdl:output message="tns:addRecyclingToUserResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getAllRecyclingFromUser">
+      <wsdl:input message="tns:getAllRecyclingFromUserRequest"/>
+      <wsdl:output message="tns:getAllRecyclingFromUserResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getTotalRecycling">
+      <wsdl:input message="tns:getTotalRecyclingRequest"/>
+      <wsdl:output message="tns:getTotalRecyclingResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="garbage_recyclerSOAP" type="tns:garbage_recycler">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="registerUser">
+      <soap:operation soapAction="http://www.example.org/garbage_recycler/registerUser"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addRecyclingToUser">
+      <soap:operation soapAction="http://www.example.org/garbage_recycler/addRecyclingToUser"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllRecyclingFromUser">
+      <soap:operation soapAction="http://www.example.org/garbage_recycler/getAllRecyclingFromUser"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTotalRecycling">
+      <soap:operation soapAction="http://www.example.org/garbage_recycler/getTotalRecycling"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="garbage_recycler">
+    <wsdl:port binding="tns:garbage_recyclerSOAP" name="garbage_recyclerSOAP">
+      <soap:address location="http://localhost:8080/Garbage_Recycler/services/garbage_recycler/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/Garbage_Recycler/services/garbage_recycler/</con:endpoint></con:endpoints><con:operation id="f03d8ad8-e2cc-4faf-9219-589a9212bc62" isOneWay="false" action="http://www.example.org/garbage_recycler/addRecyclingToUser" name="addRecyclingToUser" bindingOperationName="addRecyclingToUser" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="1861615c-5838-47b2-b1f1-27a467016af1" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/Garbage_Recycler/services/garbage_recycler/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gar="http://www.example.org/garbage_recycler/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <gar:addRecyclingToUser>\r
+         <username>?</username>\r
+         <userRecycling>\r
+            <id>?</id>\r
+            <user>\r
+               <id>?</id>\r
+               <firstname>?</firstname>\r
+               <lastname>?</lastname>\r
+               <username>?</username>\r
+               <address>?</address>\r
+               <mail>?</mail>\r
+            </user>\r
+            <bottles>?</bottles>\r
+            <tetrabricks>?</tetrabricks>\r
+            <glass>?</glass>\r
+            <paperboards>?</paperboards>\r
+            <cans>?</cans>\r
+         </userRecycling>\r
+      </gar:addRecyclingToUser>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/garbage_recycler/addRecyclingToUser"/></con:call></con:operation><con:operation id="dbee4b3f-90bb-4ef2-be80-fbdef14170c4" isOneWay="false" action="http://www.example.org/garbage_recycler/getAllRecyclingFromUser" name="getAllRecyclingFromUser" bindingOperationName="getAllRecyclingFromUser" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="d7bb859a-cbc7-4d00-a35d-527d98554062" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/Garbage_Recycler/services/garbage_recycler/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gar="http://www.example.org/garbage_recycler/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <gar:getAllRecyclingFromUser>\r
+         <username>?</username>\r
+      </gar:getAllRecyclingFromUser>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/garbage_recycler/getAllRecyclingFromUser"/></con:call></con:operation><con:operation id="afd51fd2-f11e-4cbe-ada0-ab633b798839" isOneWay="false" action="http://www.example.org/garbage_recycler/getTotalRecycling" name="getTotalRecycling" bindingOperationName="getTotalRecycling" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="a5dda319-1168-449b-b973-c06306f0c995" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/Garbage_Recycler/services/garbage_recycler/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gar="http://www.example.org/garbage_recycler/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <gar:getTotalRecycling>\r
+         <in>?</in>\r
+      </gar:getTotalRecycling>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/garbage_recycler/getTotalRecycling"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="113a8de8-6b36-4675-833d-1738fafa3a0b" isOneWay="false" action="http://www.example.org/garbage_recycler/registerUser" name="registerUser" bindingOperationName="registerUser" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="809d8062-5266-4669-811c-3065cdde947c" name="registerUserRequest 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/Garbage_Recycler/services/garbage_recycler/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gar="http://www.example.org/garbage_recycler/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <gar:registerUser>\r
+         <user>\r
+            <id></id>
+            <firstname>Bart</firstname>
+            <lastname>Simpson</lastname>
+            <username>elbarto</username>
+            <address>evergreenAv123</address>
+            <mail>elbarto@gmail.com</mail>
+\r
+         </user>\r
+      </gar:registerUser>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/garbage_recycler/registerUser"/><con:wsrmConfig version="1.2"/></con:call><con:call id="b707cea1-ffb0-4cd9-b95f-6cdb75932407" name="registerUserRequest 2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/Garbage_Recycler/services/garbage_recycler/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gar="http://www.example.org/garbage_recycler/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <gar:registerUser>\r
+         <user>\r
+            <id></id>
+            <firstname>Lisa</firstname>
+            <lastname>Simpson</lastname>
+            <username>lisa</username>
+            <address>evergreenAv123</address>
+            <mail>lalisa@gmail.com</mail>
+         </user>\r
+      </gar:registerUser>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/garbage_recycler/registerUser"/><con:wsrmConfig version="1.2"/></con:call><con:call id="5f9d0799-601c-4e67-948b-43929dcbbef3" name="registerUserRequest 3"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/Garbage_Recycler/services/garbage_recycler/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gar="http://www.example.org/garbage_recycler/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <gar:registerUser>\r
+         <user>\r
+            <id></id>
+            <firstname>Homero</firstname>
+            <lastname>Simpson</lastname>
+            <username>homer</username>
+            <address>evergreenAv123</address>
+            <mail>homers@gmail.com</mail>
+         </user>\r
+      </gar:registerUser>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/garbage_recycler/registerUser"/><con:wsrmConfig version="1.2"/></con:call><con:call id="0082828c-31d9-4884-bf26-87a89ff509c5" name="registerUserRequest 4"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/Garbage_Recycler/services/garbage_recycler/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gar="http://www.example.org/garbage_recycler/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <gar:registerUser>\r
+         <user>\r
+            <id></id>
+            <firstname>Marge</firstname>
+            <lastname>Simpson</lastname>
+            <username>marge</username>
+            <address>evergreenAv123</address>
+            <mail>margesimpson@gmail.com</mail>
+         </user>\r
+      </gar:registerUser>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/garbage_recycler/registerUser"/><con:wsrmConfig version="1.2"/></con:call><con:call id="e453fd1f-9506-4f2d-aa51-098b622d60a6" name="registerUserRequest 5"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/Garbage_Recycler/services/garbage_recycler/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gar="http://www.example.org/garbage_recycler/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <gar:registerUser>\r
+         <user>\r
+           <id></id>
+            <firstname>Maggie</firstname>
+            <lastname>Simpson</lastname>
+            <username>labebe</username>
+            <address>evergreenAv123</address>
+            <mail>maggiesimpson@gmail.com</mail>
+         </user>\r
+      </gar:registerUser>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/garbage_recycler/registerUser"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
