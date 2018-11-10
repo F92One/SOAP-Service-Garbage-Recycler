@@ -18,19 +18,36 @@
     	   RegisterUserResponse response = new RegisterUserResponse(); 
     	   User u = registerUser.getUser();
     	   r.addUser(u);
-    	   u.setId(r.getId());
+    	   u.setId(r.getUserId());
     	   response.setOut(u);
     	   return response;
        }
              
        public org.example.www.garbage_recycler.AddRecyclingToUserResponse addRecyclingToUser
                   (org.example.www.garbage_recycler.AddRecyclingToUser addRecyclingToUser){
-    	   throw new  java.lang.UnsupportedOperationException("Please implement " + this.getClass().getName() + "#getTotalRecycling");
+    	   Repository r = Repository.getInstance();
+    	   AddRecyclingToUserResponse response = new AddRecyclingToUserResponse();
+    	   String username = addRecyclingToUser.getUsername();
+    	   User u = r.getUser(username);
+    	   u.setUsername(username);
+    	   UserRecycling user = new UserRecycling();
+    	   user.setId(r.getUserRecyclingId());
+    	   user.setUser(u);
+    	   user.setBottles(addRecyclingToUser.getUserRecycling().getBottles());
+    	   user.setTetrabricks(addRecyclingToUser.getUserRecycling().getTetrabricks());
+    	   user.setGlass(addRecyclingToUser.getUserRecycling().getGlass());
+    	   user.setPaperboards(addRecyclingToUser.getUserRecycling().getPaperboards());
+    	   user.setCans(addRecyclingToUser.getUserRecycling().getCans());
+    	   r.setUserRecycling(user);
+    	   response.setOut(user);
+    	   return response;
        }
-     public org.example.www.garbage_recycler.GetAllRecyclingFromUserResponse getAllRecyclingFromUser
+       
+       public org.example.www.garbage_recycler.GetAllRecyclingFromUserResponse getAllRecyclingFromUser
                   (org.example.www.garbage_recycler.GetAllRecyclingFromUser getAllRecyclingFromUser){
     	 throw new  java.lang.UnsupportedOperationException("Please implement " + this.getClass().getName() + "#getTotalRecycling");  
-     }
+       }
+       
       public org.example.www.garbage_recycler.GetTotalRecyclingResponse getTotalRecycling
                   (org.example.www.garbage_recycler.GetTotalRecycling getTotalRecycling){
                 //TODO : fill this with the necessary business logic
