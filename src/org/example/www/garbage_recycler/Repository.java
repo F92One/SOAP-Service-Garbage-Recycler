@@ -7,16 +7,24 @@ public class Repository {
 
 	private static Repository instance = null;
 	private Repository() {}
-	private List<User> users = new ArrayList<User>();
+	private List<User> users = new ArrayList<>();
 	private List<UserRecycling> recycles = new ArrayList<>();
 	private long incrementalUserid = 0;
 	private long incrementalRecyclerid = 0;
 	
-	private static final int BOTTLES_WEIGHT = 100; //en gramos
-	private static final int TETRABRICKS_WEIGHT = 100; //en gramos
-	private static final int GLASS_WEIGHT = 100; //en gramos
-	private static final int PAPERBOARD_WEIGHT = 100; //en gramos
-	private static final int CANS_WEIGHT = 100; //en gramos
+	private static final float BOTTLE_WEIGHT = 0.1f; //en kg
+	private static final float TETRABRICK_WEIGHT = 0.075f; //en kg
+	private static final float GLASS_WEIGHT = 0.25f; //en kg
+	private static final float PAPERBOARD_WEIGHT = 0.15f; //en kg
+	private static final float CANS_WEIGHT = 0.05f; //en kg
+		
+	public static float fijarNumero(float numero, int digitos) {
+        float resultado;
+        resultado = numero * (float) Math.pow(10, digitos);
+        resultado = Math.round(resultado);
+        resultado = resultado/ (float) Math.pow(10, digitos);
+        return resultado;
+    }
 	
 	public static Repository getInstance() {
 		if (Repository.instance == null)
@@ -66,4 +74,27 @@ public class Repository {
 		return ((UserRecycling []) res.toArray(new UserRecycling[recycles.size()]));
 	}
 	
+	public Recycling getTotalRecycling() {
+		Recycling res = new Recycling();
+		int bottles = 0; 
+		int tetrabricks = 0;
+		int glass = 0;
+		int paperboard = 0;
+		int cans = 0;
+		for (UserRecycling ur: recycles) {
+			bottles += ur.getBottles();
+			tetrabricks += ur.getTetrabricks();
+			glass += ur.getGlass();
+			paperboard += ur.getPaperboards();
+			cans += ur.getCans();			
+		}
+		res.setBottles(bottles);
+		res.setTetrabricks(tetrabricks);
+		res.setGlass(glass);
+		res.setPaperboard(paperboard);
+		res.setCans(cans);
+		float formula = (((bottles * BOTTLE_WEIGHT) + (tetrabricks * TETRABRICK_WEIGHT) + (glass * GLASS_WEIGHT) + (paperboard * PAPERBOARD_WEIGHT) + (cans * CANS_WEIGHT)) / 1000);
+		res.setTons(fijarNumero(formula,5));    
+		return res;
+	}
 }

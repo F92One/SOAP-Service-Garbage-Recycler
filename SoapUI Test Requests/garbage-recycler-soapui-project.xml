@@ -194,9 +194,9 @@
                <mail></mail>
             </user>
             <bottles>20</bottles>
-            <tetrabricks>04</tetrabricks>
+            <tetrabricks>4</tetrabricks>
             <glass>9</glass>
-            <paperboards>01238</paperboards>
+            <paperboards>38</paperboards>
             <cans>0</cans>
          </userRecycling>
       </gar:addRecyclingToUser>
@@ -265,7 +265,7 @@
             <bottles>0</bottles>\r
             <tetrabricks>0</tetrabricks>\r
             <glass>0</glass>\r
-            <paperboards>1400</paperboards>\r
+            <paperboards>600</paperboards>\r
             <cans>0</cans>\r
          </userRecycling>\r
       </gar:addRecyclingToUser>\r
@@ -379,7 +379,7 @@
             </user>\r
             <bottles>610</bottles>\r
             <tetrabricks>10</tetrabricks>\r
-            <glass>983</glass>\r
+            <glass>93</glass>\r
             <paperboards>10</paperboards>\r
             <cans>50</cans>\r
          </userRecycling>\r
@@ -431,18 +431,46 @@
          </userRecycling>\r
       </gar:addRecyclingToUser>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/garbage_recycler/addRecyclingToUser"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="dbee4b3f-90bb-4ef2-be80-fbdef14170c4" isOneWay="false" action="http://www.example.org/garbage_recycler/getAllRecyclingFromUser" name="getAllRecyclingFromUser" bindingOperationName="getAllRecyclingFromUser" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="d7bb859a-cbc7-4d00-a35d-527d98554062" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/Garbage_Recycler/services/garbage_recycler/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gar="http://www.example.org/garbage_recycler/">\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/garbage_recycler/addRecyclingToUser"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="dbee4b3f-90bb-4ef2-be80-fbdef14170c4" isOneWay="false" action="http://www.example.org/garbage_recycler/getAllRecyclingFromUser" name="getAllRecyclingFromUser" bindingOperationName="getAllRecyclingFromUser" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="d7bb859a-cbc7-4d00-a35d-527d98554062" name="user1- getAllRequest"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/Garbage_Recycler/services/garbage_recycler/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gar="http://www.example.org/garbage_recycler/">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <gar:getAllRecyclingFromUser>\r
-         <username>bart</username>\r
+         <username>elbarto</username>\r
       </gar:getAllRecyclingFromUser>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/garbage_recycler/getAllRecyclingFromUser"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="afd51fd2-f11e-4cbe-ada0-ab633b798839" isOneWay="false" action="http://www.example.org/garbage_recycler/getTotalRecycling" name="getTotalRecycling" bindingOperationName="getTotalRecycling" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="a5dda319-1168-449b-b973-c06306f0c995" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/Garbage_Recycler/services/garbage_recycler/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gar="http://www.example.org/garbage_recycler/">\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/garbage_recycler/getAllRecyclingFromUser"/><con:wsrmConfig version="1.2"/></con:call><con:call id="81b9d806-fa0b-4f0e-a1e5-c0ef0b37b842" name="user2- getAllRequest"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/Garbage_Recycler/services/garbage_recycler/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gar="http://www.example.org/garbage_recycler/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <gar:getAllRecyclingFromUser>\r
+         <username>lisa</username>\r
+      </gar:getAllRecyclingFromUser>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/garbage_recycler/getAllRecyclingFromUser"/><con:wsrmConfig version="1.2"/></con:call><con:call id="685cadec-ac46-40c6-b9c5-02dd4f7c1879" name="user3- getAllRequest"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/Garbage_Recycler/services/garbage_recycler/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gar="http://www.example.org/garbage_recycler/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <gar:getAllRecyclingFromUser>\r
+         <username>homer</username>\r
+      </gar:getAllRecyclingFromUser>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/garbage_recycler/getAllRecyclingFromUser"/><con:wsrmConfig version="1.2"/></con:call><con:call id="1df72f5b-38e3-41ae-ab58-8f16c281527e" name="user4- getAllRequest"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/Garbage_Recycler/services/garbage_recycler/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gar="http://www.example.org/garbage_recycler/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <gar:getAllRecyclingFromUser>\r
+         <username>marge</username>\r
+      </gar:getAllRecyclingFromUser>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/garbage_recycler/getAllRecyclingFromUser"/><con:wsrmConfig version="1.2"/></con:call><con:call id="a5f3b0ee-eeff-4447-ac7e-90fab2abd8b0" name="user5- getAllRequest"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/Garbage_Recycler/services/garbage_recycler/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gar="http://www.example.org/garbage_recycler/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <gar:getAllRecyclingFromUser>\r
+         <username>labebe</username>\r
+      </gar:getAllRecyclingFromUser>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/garbage_recycler/getAllRecyclingFromUser"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="afd51fd2-f11e-4cbe-ada0-ab633b798839" isOneWay="false" action="http://www.example.org/garbage_recycler/getTotalRecycling" name="getTotalRecycling" bindingOperationName="getTotalRecycling" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="a5dda319-1168-449b-b973-c06306f0c995" name="getTotalRecyclingRequest"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/Garbage_Recycler/services/garbage_recycler/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gar="http://www.example.org/garbage_recycler/">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <gar:getTotalRecycling>\r
-         <in>?</in>\r
+         <in></in>\r
       </gar:getTotalRecycling>\r
    </soapenv:Body>\r
 </soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/garbage_recycler/getTotalRecycling"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="113a8de8-6b36-4675-833d-1738fafa3a0b" isOneWay="false" action="http://www.example.org/garbage_recycler/registerUser" name="registerUser" bindingOperationName="registerUser" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="809d8062-5266-4669-811c-3065cdde947c" name="registerUserRequest 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/Garbage_Recycler/services/garbage_recycler/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gar="http://www.example.org/garbage_recycler/">\r

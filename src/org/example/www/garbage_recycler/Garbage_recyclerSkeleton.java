@@ -61,9 +61,12 @@ import java.util.List;
        
       public org.example.www.garbage_recycler.GetTotalRecyclingResponse getTotalRecycling
                   (org.example.www.garbage_recycler.GetTotalRecycling getTotalRecycling){
-                //TODO : fill this with the necessary business logic
-                throw new  java.lang.UnsupportedOperationException("Please implement " + this.getClass().getName() + "#getTotalRecycling");
-        }
+    	  GetTotalRecyclingResponse response = new GetTotalRecyclingResponse();
+    	  Repository r = Repository.getInstance();
+    	  Recycling calculateRecycling = r.getTotalRecycling();
+    	  response.setOut(calculateRecycling);
+    	  return response;
+       }
      
     }
     
