@@ -8,7 +8,7 @@ public class Repository {
 	private static Repository instance = null;
 	private Repository() {}
 	private List<User> users = new ArrayList<User>();
-	private List<UserRecycling> recycles = new ArrayList<UserRecycling>();
+	private List<UserRecycling> recycles = new ArrayList<>();
 	private long incrementalUserid = 0;
 	private long incrementalRecyclerid = 0;
 	
@@ -55,6 +55,15 @@ public class Repository {
 	public void setUserRecycling(UserRecycling user) {
 	//implementar excepcion, si el id que quiero ingresar ya existe, me tiene que denegar la operacion
 		recycles.add(user);
+	}
+	
+	public UserRecycling [] getAllRecyclersFromUser(String username){
+		List<UserRecycling> res = new ArrayList<>();
+		for (UserRecycling u: recycles) { 
+			if (u.getUser().getUsername().equals(username))
+				res.add(u);
+		}
+		return ((UserRecycling []) res.toArray(new UserRecycling[recycles.size()]));
 	}
 	
 }
